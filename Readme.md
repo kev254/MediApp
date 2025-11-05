@@ -1,25 +1,25 @@
-# 🩺 MediApp — Patient Registration & Assessment System
+# 🩺 MediApp  Patient Registration & Assessment System
 
 **MediApp** is an Android mobile application that enables healthcare workers to **register patients**, record **vitals (height, weight, BMI)**, and complete **General** and **Overweight** health assessments.  
-The app works both **offline (Room database)** and **online (API sync)** — ensuring reliable data capture and synchronization.
+The app works both **offline (Room database)** and **online (API sync)**,  ensuring reliable data capture and synchronization.
 
 ---
 
 ## 📱 Screenshots
 
-| Patient Listing                             | Add Vitals                                  | Assessment Form                            |
-|---------------------------------------------|---------------------------------------------|--------------------------------------------|
-| <img src="screenshots/s1.png" width="230"/> | <img src="screenshots/s2.png" width="230"/> | <img src="screenshots/s3.png" width="230"/> |
-| <img src="screenshots/s4.png" width="230"/> | <img src="screenshots/s5.png" width="230"/> | <img src="screenshots/s6.png" width="230"/> |
-| <img src="screenshots/s7.png" width="230"/> | <img src="screenshots/s8.png" width="230"/> |
+## 📱 Screenshots
+
+| Patient Listing                             | Add Vitals                                  | Assessment Form                             |
+|---------------------------------------------|---------------------------------------------|---------------------------------------------|
+| <img src="screenshots/s1.jpg" width="230"/> | <img src="screenshots/s2.jpg" width="230"/> | <img src="screenshots/s3.jpg" width="230"/> |
+| <img src="screenshots/s4.jpg" width="230"/> | <img src="screenshots/s5.jpg" width="230"/> | <img src="screenshots/s6.jpg" width="230"/> |
+| <img src="screenshots/s7.jpg" width="230"/> | <img src="screenshots/s8.jpg" width="230"/> |                                             |
 
 ---
 
 ## 🔗 Download APK
 
-📦 **[Download MediApp v1.0 (APK)](screenshots/mediapp.apk)**  
-*(Replace this link with your actual APK download link — e.g., Google Drive, Dropbox, or GitHub Releases.)*
-
+📦 **[Download MediApp v1.0 (APK)](screenshots/mediapp.apk)**
 ---
 
 ## 🚀 Features
