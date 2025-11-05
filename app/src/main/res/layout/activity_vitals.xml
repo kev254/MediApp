@@ -1,71 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    android:background="@android:color/white">
+    android:padding="18dp"
+    android:background="@color/colorBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:paddingBottom="32dp">
+        android:orientation="vertical">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:backgroundTint="?attr/colorPrimary"
+            android:title="Patient Vitals"
+            android:titleTextColor="@android:color/white"
+            app:titleCentered="true" />
 
-        <!-- Height Input -->
+        <!-- header -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:background="@color/colorSecondary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Patient Vitals form"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:gravity="center"
+            android:background="#FFF8E1"
+            android:layout_marginTop="8dp" />
+
+        <!-- Patient name -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Patient Name:"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/tvPatientName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_input_field"
+            android:padding="12dp"
+            android:text="—"
+            android:textColor="@color/colorOnBackground" />
+
+        <!-- Visit Date -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Visit Date"
+            android:layout_marginTop="12dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Select visit date">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etVisitDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:clickable="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Height -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Height (cm)"
             android:layout_marginTop="12dp">
-
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etHeight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:hint="Enter height in cm" />
+                android:inputType="numberDecimal" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Weight Input -->
+        <!-- Weight -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Weight (kg)"
             android:layout_marginTop="12dp">
-
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etWeight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:hint="Enter weight in kg" />
+                android:inputType="numberDecimal" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- BMI Display -->
+        <!-- BMI display -->
         <TextView
             android:id="@+id/tvBmi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="BMI: —"
-            android:textSize="18sp"
             android:textStyle="bold"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/black" />
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:padding="10dp"
+            android:background="@drawable/bg_input_field" />
 
-        <!-- Save Button -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSave"
+        <!-- Buttons: Close | Save -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save Vitals"
-            android:textAllCaps="false"
-            android:layout_marginTop="28dp"
-            android:backgroundTint="?attr/colorPrimary"
-            android:textColor="@android:color/white"
-            app:cornerRadius="8dp"
-            android:paddingVertical="12dp" />
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="20dp">
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnClose"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Close"
+                android:layout_marginEnd="8dp"
+                app:backgroundTint="#E8F5E9"
+                android:textColor="@color/colorOnBackground"
+                app:cornerRadius="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                app:backgroundTint="?attr/colorPrimary"
+                android:textColor="@android:color/white"
+                app:cornerRadius="8dp" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

@@ -5,5 +5,15 @@
     <color name="teal_700">#018786</color>
     <color name="primaryColor">#2196F3</color>
     <color name="accentColor">#FF9800</color>
+    <color name="colorPrimary">#0059B2</color>
+    <color name="colorSecondary">#66BB6A</color>
+    <color name="colorBackground">#FAFAFA</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorOnBackground">#212121</color>
+    <color name="red">#E53935</color> <!-- Underweight -->
+    <color name="green">#43A047</color> <!-- Normal -->
+    <color name="orange">#FB8C00</color><!-- Overweight -->
+    <color name="gray">#9E9E9E</color>
+
 
 </resources>

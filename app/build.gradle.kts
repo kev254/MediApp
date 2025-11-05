@@ -37,6 +37,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation(libs.androidx.work.runtime)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
@@ -61,6 +62,9 @@ dependencies {
     // Glide
     implementation(libs.glide)
     annotationProcessor(libs.glide.compiler)
+
+    //work manager for syncing
+    implementation (libs.work.runtime)
 
     // Testing
     testImplementation(libs.junit)

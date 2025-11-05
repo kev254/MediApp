@@ -1,23 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    android:background="@android:color/white">
+    android:background="@color/colorBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:paddingBottom="32dp">
+        android:padding="20dp">
+
+        <!-- App Bar -->
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:title="Patient Registration"
+            android:titleTextColor="@android:color/white"
+            android:backgroundTint="?attr/colorPrimary"
+            app:titleCentered="true" />
+
+        <!-- Header -->
+        <TextView
+            android:id="@+id/tvFormTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter Patient Details"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="16dp"
+            android:gravity="center" />
 
         <!-- Patient ID -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Patient ID"
-            android:layout_marginTop="12dp">
+            android:layout_marginTop="16dp"
+            app:startIconDrawable="@drawable/ic_id_add">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPatientId"
@@ -31,7 +53,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="First Name"
-            android:layout_marginTop="12dp">
+            android:layout_marginTop="12dp"
+            app:startIconDrawable="@drawable/ic_person">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etFirstName"
@@ -45,7 +68,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Last Name"
-            android:layout_marginTop="12dp">
+            android:layout_marginTop="12dp"
+            app:startIconDrawable="@drawable/ic_person">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etLastName"
@@ -54,49 +78,76 @@
                 android:inputType="textCapWords" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Date of Birth -->
-        <TextView
+        <!-- Date of Birth (with Date Picker dialog) -->
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Date of Birth"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp" />
+            android:hint="Date of Birth"
+            android:layout_marginTop="12dp"
+            app:startIconDrawable="@drawable/ic_person">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDobInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:clickable="true"
+                android:hint="Tap to select date" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- (Hidden) Actual DatePicker (kept for compatibility, invisible) -->
         <DatePicker
             android:id="@+id/dpDob"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:calendarViewShown="true" />
+            android:visibility="gone" />
 
         <!-- Gender -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Gender"
-            android:textSize="16sp"
             android:textStyle="bold"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
         <Spinner
             android:id="@+id/spGender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:spinnerMode="dropdown" />
 
-        <!-- Register Button -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnRegister"
+        <!-- Buttons Row -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Register"
-            android:textAllCaps="false"
-            android:layout_marginTop="24dp"
-            android:backgroundTint="?attr/colorPrimary"
-            android:textColor="@android:color/white"
-            app:cornerRadius="8dp"
-            android:paddingVertical="12dp" />
+            android:orientation="horizontal"
+            android:layout_marginTop="28dp"
+            android:weightSum="2">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnClose"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Close"
+                android:layout_marginEnd="8dp"
+                app:cornerRadius="8dp"
+                app:backgroundTint="@color/colorSecondary"
+                android:textColor="@android:color/white" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                app:cornerRadius="8dp"
+                app:backgroundTint="?attr/colorPrimary"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>

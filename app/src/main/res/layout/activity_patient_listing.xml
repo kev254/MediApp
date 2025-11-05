@@ -1,77 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
-    android:background="@android:color/white">
+    android:background="@color/colorBackground">
 
-    <!-- Header Section -->
-    <TextView
-        android:id="@+id/tvTitle"
+    <!-- Top App Bar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Patient Listing"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:gravity="center_horizontal"
-        android:layout_marginBottom="16dp" />
+        android:layout_height="?attr/actionBarSize"
+        android:backgroundTint="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:title="Patient Listing"
+        android:titleTextColor="@android:color/white"
+        app:titleCentered="true" />
 
     <!-- Filter Section -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="16dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Filter by Visit Date:"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:layout_marginEnd="8dp" />
+        android:padding="16dp">
 
         <EditText
             android:id="@+id/etFilterDate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Select date"
+            android:hint="Select Visit Date"
             android:focusable="false"
-            android:clickable="true"
-            android:inputType="none"
             android:background="@drawable/bg_input_field"
-            android:padding="10dp" />
+            android:padding="12dp"
+            android:textSize="15sp"
+            android:drawablePadding="8dp" />
 
-        <com.google.android.material.button.MaterialButton
+        <Button
             android:id="@+id/btnFilter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:text="Filter"
             android:textAllCaps="false"
-            android:layout_marginStart="8dp"
             android:backgroundTint="?attr/colorPrimary"
-            android:textColor="@android:color/white"
-            android:cornerRadius="6dp" />
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
     <!-- Divider -->
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#E0E0E0"
-        android:layout_marginBottom="12dp" />
+        android:background="#E0E0E0" />
 
-    <!-- Patients List -->
-    <ListView
-        android:id="@+id/listPatients"
+    <!-- Patient Recycler View -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPatients"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="@color/teal_700"
-        android:dividerHeight="0.5dp"
-        android:listSelector="@android:color/darker_gray" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp" />
+
+    <!-- Floating Add Patient Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddPatient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="60dp"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="?attr/colorPrimary"
+        app:tint="@android:color/white"
+        app:maxImageSize="28dp"
+        android:contentDescription="Add Patient" />
 
 </LinearLayout>
